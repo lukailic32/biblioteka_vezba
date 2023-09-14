@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <body>
+        <div>Menu:
+            <a href="/">Home</a>
+            <a href="/books">Books</a>
+            <a href="/search_book">Search book</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
