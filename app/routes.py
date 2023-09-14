@@ -4,35 +4,35 @@ from app.forms import BookSearchForm
 
 books = [
     {
-        'name': 'Book1',
+        'title': 'Book1',
         'type': 'Drama',
         'pages': '150'
     },
     {
-        'name': 'Book2',
+        'title': 'Book2',
         'type': 'Roman',
         'pages': '200'
     },
     {
-        'name': 'Book3',
+        'title': 'Book3',
         'type': 'Roman',
         'pages': '200'
     },
     {
-        'name': 'Book4',
+        'title': 'Book4',
         'type': 'Drama',
         'pages': '130'
     },
     {
-        'name': 'Book5',
+        'title': 'Book5',
         'type': 'Drama',
         'pages': '220'
     },
 ]
 
-@app.route('/')
-def index():
-    return render_template('home.html')
+#@app.route('/')
+#def index():
+#    return render_template('home.html')
 
 @app.route('/books')
 def get_books():
@@ -42,7 +42,7 @@ def get_books():
 def search_book():
     form = BookSearchForm()
     if form.validate_on_submit():
-        flash('Searched book {}'.format(form.book_name.data))
+        flash('Searched book {}'.format(form.book_title.data))
         return redirect('/')
     return render_template('search_book.html', form=form)
 
@@ -50,5 +50,5 @@ def search_book():
 def show_book():
     form = BookSearchForm()
     if form.validate_on_submit():
-        flash('Searched book {}'.format(form.book_name.data))
+        flash('Searched book {}'.format(form.book_title.data))
         return redirect('/')
