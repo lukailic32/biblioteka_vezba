@@ -5,3 +5,4 @@ def make_shell_context():
     return {db: 'db'}
 
 #DODAT KOM
+#JOS JEDAN
