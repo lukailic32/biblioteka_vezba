@@ -6,3 +6,4 @@ def make_shell_context():
 
 #DODAT KOM
 #JOS JEDAN
+#novi kom
